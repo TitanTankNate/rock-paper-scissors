@@ -1,7 +1,3 @@
-// Rock-paper-scissors
-// Created by Nathan Janota
-// 27 August 2024
-// Created as part of The Odin Project
 
 // Randomly generate a CPU choice
 function getCPUchoice() {
