@@ -5,7 +5,9 @@ let playerName;
 
 
 
-// EVENT HANDLING eheheheheheheheheheheheheheheheheheheheh
+
+
+// EVENT HANDLING ehehehehehehehehehehehehehehehehehehehehehehehehehehe
 // On page load, initialize game
 document.addEventListener('DOMContentLoaded', () => {
     // Set starting score and round count
@@ -100,9 +102,8 @@ gameOverButton.addEventListener("click",() => {
         gameOverBodyText.textContent = "You're such a baka, senpai.  But you're cute when you get mad.";
     } else if (scoreArray[0] == scoreArray[1]) {
         gameOverHeaderText.textContent = "DRAW!";
-        gameOverBodyText.textContent = "Oh, we did the same thing, senpai! We must be made for each otehr!";
+        gameOverBodyText.textContent = "Oh, we did the same thing, senpai! We must be made for each other!";
     };
-
     gameOverContainer.appendChild(gameOverHeaderText);
     gameOverContainer.appendChild(gameOverBodyText);
 
@@ -118,7 +119,9 @@ gameOverButton.addEventListener("click",() => {
 
 
 
-// FUNCTION DEFINITIONS ffffffffffffffffffffffffffffffffff
+
+
+// FUNCTION DEFINITIONS fffffffffffffffffffffffffffffffffffffffffffffff
 // Choose random CPU name from list
 // -- This function creates a customizable array of names, 
 // and randomly selects one from the list.
@@ -213,7 +216,7 @@ function updateScore(inputScoreArray, functionToExecute) {
 
 
 
-// CORE GAMEPLAY LOOP
+// CORE GAMEPLAY LOOP CGLCGLCGLCGLCGLCGLCGLCGLCGLCGLCGLCGLCGLCGLCGLCGLC
 function playRound(buttonID) {
     let result;
 

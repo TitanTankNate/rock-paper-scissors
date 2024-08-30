@@ -10,47 +10,53 @@
 <body>
     <div class="header">
         <div class="title text">じゃんけんぽん</div>
-        <div class="subtitle text">最初はグ | The classic Japanese game of asserting dominance</div>
+        <div class="subtitle text">最初はグ | The classic Japanese game of asserting dominance by fisting.</div>
     </div>
     <div class="content">
-        <div class="container players">Pick your opponent and enter your name.</div>
-            <div class="container CPU-container">
-                <p class="opponent-name">Opponent name:</p>
-                <button id="1" class="button randomnize-cpu-name">Randomize</button> 
-            </div>    
-            <div class="container player-container">
-                <label for="playerName">Player name:</label>
-                <input type="text" placeholder="Enter player name" id="playerName" name="playerName">
+        <div class="container instructions-and-players">
+            <div class="container players">
+                <p class="text instructions">Click "Randomize" to select your opponent, and then enter your name.  Start the game anytime!</p>
+                <div class="container CPU-container">
+                    <p class="text opponent-name">Opponent name:</p>
+                    <button id="1" class="button randomnize-cpu-name">Randomize</button> 
+                </div>    
+                <div class="container player-container">
+                    <label for="playerName" class="text playerName">Player name:</label>
+                    <input type="text" placeholder="Enter player name" id="playerName" name="playerName">
+                </div>
             </div>
-        <div class="container scorecard">Scorecard</div>
-        <div class="container scorecard player">
-            <div class="scorecard number player">0</div>
-            <div class="score player"></div>
-            <p>Your Score</p>
-        </div>    
-        <div class="container scorecard opponent">
+            <div class="container empty"></div>
+        </div> 
+        <div class="container scorecard">
+            <div class="container scorecard player">
+                <div class="scorecard number player">0</div>
+                <div class="score player"></div>
+                <p class="text score">Your Score</p>
+            </div>    
+            <div class="container scorecard opponent">
                 <div class="scorecard number opponent">0</div>
                 <div class="score opponent"></div>
-                <p>Opponent Score</p>
+                <p class="text score">Opponent Score</p>
             </div>
+        </div>
         <div class="container selection">Throw selection</div>
             <div class="container selection card">
                 <input type="image" id="3" src="" name="selectRock" class="button choice">
-                <p>Rock</p>
+                <p class="text choice">Rock</p>
             </div>
             <div class="container selection card">
                 <input type="image" id="4" src="" name="selectPaper" class="button choice">
-                <p>Paper</p>
+                <p class="text choice">Paper</p>
             </div>
             <div class="container selection card">
                 <input type="image" id="5" src="" name="selectScissors" class="button choice">
-                <p>Scissors</p>
+                <p class="text choice">Scissors</p>
             </div>
         <div class="container results">
-            <p class="player-action-text"></p>
-            <p class="cpu-action-text"></p>
-            <p class="results-header-text"></p>
-            <p class = "results-text">Result text</p>
+            <p class="text player-action-text"></p>
+            <p class="text cpu-action-text"></p>
+            <p class="text results-header-text"></p>
+            <p class = "text results-text">Result text</p>
             <div class = "container game-buttons">
                 <button class="button reset">Reset</button>
                 <button class="button game-over">No More, Please</button>  

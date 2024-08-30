@@ -1,12 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&family=Zen+Kurenaido&display=swap');
+
+/* UNIVERSAL STYLES */
+
 body {
-    background-color: #357491;
+    /* Display declarations */
+    display: flex;
+    flex-direction: column;
+
+    /* Text and color declarations */
+    background-color: #001219;
+    font-family: "Titillium Web","Zen Kurenaido",sans-serif;
+
+    /* CBPM */
+    border-left-style: solid;
+    border-left-width: 4px;
+    border-color: #9b2226;
+    border-top-style: solid;
+    border-top-width: 8px;
+    margin: 0;
 }
 
-.header-text {
+.text {
+    color: #e9d8a6;
+}
+
+
+
+/* HEADER STYLES */
+.header {
+    /* Display declarations */
+    display: flex;
+    flex-direction: column;
+
+    /* Font and color declarations */
+    background-color: #bb3e03;
+
+    /* CBPM */
+    padding-left: 20px;
+    margin: 0;
+}
+
+.title.text {
+    /* Font and color declarations */
     font-size: 48px;
     font-weight: 900;
+    text-shadow: 1px 2px 4px #000000;
+
+    /* CBPM */
+    line-height: 100%;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-bottom-color: #001219;
+    padding: 8px 0px 0px 0px;
+    margin: 0;
+
 }
 
+.subtitle.text {
+    /* Font and color declarations */
+    font-size: 24px;
+    text-shadow: 1px 1px 2px #000000;
+
+    /* CBPM */
+    line-height: 100%;
+    padding: 2px 0px 4px 16px;
+}
+
+
+/* CONTAINER STYLES cccccccccccccccccccccccccccccccccccccccccccccccccccccc*/
+
+/* /* PLAYER CONTAINER  p   p   p   p   p   p   p   p   p   p   p   p   p*/
+.container.instructions-and-players {
+    /* Display declarations */
+    display: flex;
+
+    /* CBPM */
+    padding: 6px 0px;
+
+    /* DEBUG BORDERS */
+    /* border-style: solid;
+    border-width: 2px;
+    border-color: #FFFFFF */
+}
+
+.container.players {
+    /* Display declarations */
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 240px;
+
+    /* CBPM */
+    border-left-style: solid;
+    border-left-width: 2px;
+    border-left-color: #e9d8a6;
+    margin-left: 60px;
+
+
+    /* DEBUG BORDERS */
+    /* border-style: solid;
+    border-width: 2px;
+    border-color: #FF0000 */
+}
+
+.container.players .text.instructions {
+    /* Font and color declarations */
+    font-size: 18px;
+
+    /* CBPM */
+    line-height: 110%;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    padding: 8px 0 4px 4px;
+    margin: 0;
+}
+
+.container.players .container {
+    /* Display declarations */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+
+    /* Font and color declarations */
+    font-size: 20px;
+    font-weight: 600;
+
+    /* CBPM */
+    padding: 0px 0px 4px 4px;
+    margin: 0;
+
+    /* DEBUG BORDERS */
+    /* border-style: solid;
+    border-width: 2px;
+    border-color: #00FF00 */
+}
+
+.randomnize-cpu-name {
+    /* Font and color declarations */
+    font-size: 16px;
+    background-color: #94d2bd;
+
+    /* CBPM */
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 2px;
+    border-color: #005f73;
+    box-shadow: 2px 2px 2px #000000;
+
+    padding: 4px 12px;
+}
+
+#playerName {
+    /* Font and color declarations */
+    font-size: 16px;
+}
+
+.container.empty {
+    /* Display declarations */
+    display: flex;
+    flex: 3 3 auto;
+}
+
+
+/* SCORECARD CONTAINER */
 .scorecard.number {
     font-size: 48px;
+    /* DEBUG BORDERS */
+    border-style: solid;
+    border-width: 2px;
+    border-color: #FFFFFF
 }
+
+
+
+/* DEBUG BORDERS */
+/* border-style: solid;
+border-width: 2px;
+border-color: #FFFFFF */
