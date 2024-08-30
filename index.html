@@ -3,13 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src = "./javascript.js"></script>
+    <script src = "./javascript.js" defer></script>
     <link rel="stylesheet" href = "./style.css">
     <title>じゃんけんぽん</title>
 </head>
 <body>
-    <div class="content">
-        <div class="header-text">じゃんけんぽん</div>
+    <div class="header">
+        <div class="title text">じゃんけんぽん</div>
+        <div class="subtitle text">最初はグ | The classic Japanese game of asserting dominance</div>
     </div>
+    <div class="content">
+        <div class="container players">Pick your opponent and enter your name.</div>
+            <div class="container CPU-container">
+                <p>Opponent name:</p>
+                <button id="1" class="button">Randomize</button> 
+            </div>    
+            <div class="container player-container">
+                <label for="playerName">Player name:</label>
+                <input type="text" id="playerName" name="playerName">
+                <button id="2" class="button">Enter</button> 
+            </div>
+        <div class="container scorecard">Scorecard</div>
+            <div class="container scorecard opponent">
+                <div class="scorecard-image"></div>
+                <div class="score opponent"></div>
+                <p>Opponent Score</p>
+            </div>
+            <div class="container scorecard player">
+                <div class="scorecard-image"></div>
+                <div class="score opponent"></div>
+                <p>Your Score</p>
+            </div>
+        <div class="container selection">Throw selection</div>
+            <div class="container selection card">
+                <input type="image" id="3" src="" name="selectRock" class="button choice">
+                <p>Rock</p>
+            </div>
+            <div class="container selection card">
+                <input type="image" id="4" src="" name="selectPaper" class="button choice">
+                <p>Paper</p>
+            </div>
+            <div class="container selection card">
+                <input type="image" id="5" src="" name="selectScissors" class="button choice">
+                <p>Scissors</p>
+            </div>
+        <div class="container results">Results printout</div>
+        <p>Result text</p>
+    </div>
+    <div class="footer">
+        <p>Created as Part of  
+            <a href="https://www.theodinproject.com/">The Odin Project</a></p>
+        <p>Copyright The Odin Project and Nathan Janota</p>
+    </div> 
 </body>
 </html>
