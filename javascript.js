@@ -68,6 +68,8 @@ resetButton.addEventListener("click", () => {
     playerAction.textContent = null;
     const cpuAction = document.querySelector(".cpu-action-text");
     cpuAction.textContent = null;
+    const roundResults = document.querySelector(".results-header-text");
+    roundResults.textContent = null;
 
 });
 
