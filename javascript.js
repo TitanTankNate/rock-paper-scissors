@@ -1,5 +1,7 @@
 // ASSIGN GLOBAL VARIABLES (I'm gonna puke)
 let scoreArray = [0,0,0];
+let chosenCPUname;
+let playerName;
 
 
 
@@ -11,8 +13,12 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log("Resetting score: scoreArray now: " + scoreArray);
     
     // Set starting opponent name
-    getCPUname();
+    chosenCPUname = getCPUname();
     console.log("Selecting random CPU opponent.");
+
+    // Initialize HTML objects and CSS styles
+    const resultsText = document.querySelector(".results-text");
+    resultsText.textContent = "Awaiting first round results!";
 })
 
 // Set up choices "click" listener
@@ -28,9 +34,15 @@ choiceButtons.forEach((button) => {
 // Set up "Randomnize" button listener
 const randomButton=document.querySelector(".button.randomnize-cpu-name");
 randomButton.addEventListener("click",() => {
-    let chosenCPUname = getCPUname();
+    chosenCPUname = getCPUname();
     const opponentNameText = document.querySelector(".opponent-name");
     opponentNameText.textContent = "Opponent name: " + chosenCPUname;
+});
+
+// Set up text input field listener
+const textField=document.querySelector("#playerName");
+textField.addEventListener("keyup", () => {
+    playerName = textField.value;
 });
 
 // Set up "Reset" button listener
@@ -40,11 +52,68 @@ resetButton.addEventListener("click", () => {
     scoreArray = updateScore(scoreArray,"reset");
 
     // Reset opponent
-    getCPUname();
+    chosenCPUname = getCPUname();
 
     // Reset player name
-    const playerName = document.querySelector("#playerName");
-    playerName.value = "";
+    const textField = document.querySelector("#playerName");
+    textField.value = "";
+    playerName = "";
+
+    // Reset HTML objects and CSS styles
+    const resultsText = document.querySelector(".results-text");
+    resultsText.textContent = "Awaiting first round results.";
+    const playerAction = document.querySelector(".player-action-text");
+    playerAction.textContent = null;
+    const cpuAction = document.querySelector(".cpu-action-text");
+    cpuAction.textContent = null;
+
+});
+
+// Set up "No More, Please" game over button listener
+const gameOverButton=document.querySelector(".button.game-over");
+gameOverButton.addEventListener("click",() => {
+
+    // Remove body content
+    const contentDivs=document.querySelectorAll(".content div")
+    contentDivs.forEach((div) => {
+        div.remove();
+    });
+    // Create new container
+    const contentContainer=document.querySelector(".content");
+    const gameOverContainer = document.createElement("div");
+    gameOverContainer.classList.add = "container game-over";
+    contentContainer.appendChild(gameOverContainer);
+
+    // Add header, text, and refresh button to the new container
+    // // Header and text
+    const gameOverHeaderText = document.createElement("p");
+    gameOverHeaderText.classList.add = "header text game-over";
+    const gameOverBodyText = document.createElement("p");
+    gameOverBodyText.classList.add = "body text game-over";
+
+    // // // Custom header and body text
+    if (scoreArray[0] < scoreArray[1]) {
+        gameOverHeaderText.textContent = "VICTORY!";
+        gameOverBodyText.textContent = "You're so good at this senpai!  You should teach me how you got so good at this.";
+    } else if (scoreArray[0] > scoreArray[1]) {
+        gameOverHeaderText.textContent = "DEFEAT!";
+        gameOverBodyText.textContent = "You're such a baka, senpai.  But you're cute when you get mad.";
+    } else if (scoreArray[0] == scoreArray[1]) {
+        gameOverHeaderText.textContent = "DRAW!";
+        gameOverBodyText.textContent = "Oh, we did the same thing, senpai! We must be made for each otehr!";
+    };
+
+    gameOverContainer.appendChild(gameOverHeaderText);
+    gameOverContainer.appendChild(gameOverBodyText);
+
+    // // Refresh button
+    const newGameButton = document.createElement("button");
+    newGameButton.classList.add = "button new-game";
+    newGameButton.textContent = "Play Again";
+    newGameButton.addEventListener("click", () => {
+        location.reload();
+    });
+    gameOverContainer.appendChild(newGameButton);
 });
 
 
@@ -135,10 +204,6 @@ function updateScore(inputScoreArray, functionToExecute) {
     const playerScoreText = document.querySelector(".scorecard.number.player");
     playerScoreText.textContent = inputScoreArray[1];
 
-    // // Update results text
-    const resultsText = document.querySelector(".container.results");
-    resultsText.textContent = "Haha noob"
-
 
     return inputScoreArray;
 
@@ -150,6 +215,11 @@ function updateScore(inputScoreArray, functionToExecute) {
 
 // CORE GAMEPLAY LOOP
 function playRound(buttonID) {
+    let result;
+
+    if (playerName == '' || playerName == undefined) {
+        playerName = "Unnamed-yet-heroic MC";
+    }
 
     // Obtain CPU and player choices
     const cpuChoice = getCPUchoice();
@@ -163,13 +233,16 @@ function playRound(buttonID) {
         case 2:
         case -1:
             scoreArray = updateScore(scoreArray,"cpuWins");
+            result = "Defeat";
             break;
         case 1:
         case -2:
             scoreArray = updateScore(scoreArray,"playerWins");
+            result = "Victory";
             break;
         case 0:
             scoreArray = updateScore(scoreArray,"draw");
+            result = "Draw";
             break;
     }
 
@@ -179,8 +252,29 @@ function playRound(buttonID) {
     You chose ${choiceToStr(playerChoice)}
     
     Player\t${scoreArray[1]}     CPU\t${scoreArray[0]}`); 
+
+    // // Update results text
+    const playerAction = document.querySelector(".player-action-text");
+    playerAction.textContent = playerName + " threw " + choiceToStr(playerChoice) + "!";
+    const cpuAction = document.querySelector(".cpu-action-text");
+    cpuAction.textContent = chosenCPUname + " threw " + choiceToStr(cpuChoice) + "!";
+    const resultsHeaderText = document.querySelector(".results-header-text");
+    const resultsText = document.querySelector(".results-text");
+    
+    // // Update custom results text, based on result
+    switch (result) {
+        case "Victory":
+            resultsHeaderText.textContent = "Round won!";
+            resultsText.textContent = playerName + " defeated " + chosenCPUname + "!";
+            break;
+        case "Defeat":
+            resultsHeaderText.textContent = "Round lost!";
+            resultsText.textContent = playerName + " was defeated by " + chosenCPUname + "!";
+            break;
+        case "Draw":
+            resultsHeaderText.textContent = "Round is a draw!";
+            resultsText.textContent = "Neither " + playerName + " nor " + chosenCPUname + " could come out ahead!";
+            break;
+    }
+    
 }
-
-
-// Program body
-//gameLoop();

@@ -21,18 +21,17 @@
             <div class="container player-container">
                 <label for="playerName">Player name:</label>
                 <input type="text" placeholder="Enter player name" id="playerName" name="playerName">
-                <button id="2" class="button">Enter</button> 
             </div>
         <div class="container scorecard">Scorecard</div>
-            <div class="container scorecard opponent">
+        <div class="container scorecard player">
+            <div class="scorecard number player">0</div>
+            <div class="score player"></div>
+            <p>Your Score</p>
+        </div>    
+        <div class="container scorecard opponent">
                 <div class="scorecard number opponent">0</div>
                 <div class="score opponent"></div>
                 <p>Opponent Score</p>
-            </div>
-            <div class="container scorecard player">
-                <div class="scorecard number player">0</div>
-                <div class="score player"></div>
-                <p>Your Score</p>
             </div>
         <div class="container selection">Throw selection</div>
             <div class="container selection card">
@@ -47,9 +46,17 @@
                 <input type="image" id="5" src="" name="selectScissors" class="button choice">
                 <p>Scissors</p>
             </div>
-        <div class="container results"></div>
-        <p>Result text</p>
-        <button class="button reset">Reset</button>
+        <div class="container results">
+            <p class="player-action-text"></p>
+            <p class="cpu-action-text"></p>
+            <p class="results-header-text"></p>
+            <p class = "results-text">Result text</p>
+            <div class = "container game-buttons">
+                <button class="button reset">Reset</button>
+                <button class="button game-over">No More, Please</button>  
+            </div>
+            
+        </div>
     </div>
     <div class="footer">
         <p>Created as Part of  
