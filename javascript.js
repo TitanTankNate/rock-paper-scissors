@@ -117,6 +117,69 @@ gameOverButton.addEventListener("click",() => {
         location.reload();
     });
     gameOverContainer.appendChild(newGameButton);
+
+    // // Apply style
+    {
+        // gameOverContainer
+        // // Display declarations
+        gameOverContainer.style.display = "flex";
+        gameOverContainer.style.flexDirection = "column";
+        gameOverContainer.style.justifyContent = "center";
+        gameOverContainer.style.alignItems = "center";
+
+        // // Font and color declarations
+        gameOverContainer.style.backgroundColor = "#94d2bd";
+
+        // // CBPM
+        gameOverContainer.style.borderTopStyle = "solid";
+        gameOverContainer.style.borderTopWidth = "8px";
+        gameOverContainer.style.borderTopColor = "#005f73";
+        gameOverContainer.style.borderBottomStyle = "solid";
+        gameOverContainer.style.borderBottomWidth = "8px";
+        gameOverContainer.style.borderBottomColor = "#005f73";
+        gameOverContainer.style.padding = "12px 0px";
+        gameOverContainer.style.margin = "36px 0px";
+        
+
+
+        // gameOverHeaderText
+        // // Font and color declarations
+        gameOverHeaderText.style.fontSize = "64px";
+        gameOverHeaderText.style.fontWeight = "800";
+        gameOverHeaderText.style.color = "#005f73";
+        gameOverHeaderText.style.textShadow = "2px 2px 4px #9b2226";
+
+        // // CBPM
+        gameOverHeaderText.style.lineHeight = "100%";
+        gameOverHeaderText.style.padding = "0";
+        gameOverHeaderText.style.margin = "0";
+
+
+
+        // gameOverBodyText
+        // // Font and color declarations
+        gameOverBodyText.style.fontSize = "24px";
+        gameOverBodyText.style.fontWeight = "600";
+        gameOverBodyText.style.color = "#005f73";
+        gameOverBodyText.style.textShadow = "1px 1px 2px #000000";
+
+
+        
+        // newGameButton
+        // // Font and color declarations
+        newGameButton.style.fontSize = "16px";
+        newGameButton.style.backgroundColor = "#94d2bd";
+
+        // // CBPM
+        newGameButton.style.borderStyle = "solid";
+        newGameButton.style.borderRadius = "5px";
+        newGameButton.style.borderWidth = "2px";
+        newGameButton.style.borderColor = "#005f73";
+        newGameButton.style.boxShadow = "2px 2px 2px #000000";
+
+        newGameButton.style.padding = "4px 12px";
+    };
+    
 });
 
 

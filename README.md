@@ -17,6 +17,3 @@ https://www.theodinproject.com
 Curious how long it took to make this project?
 This project took 22 pomodoros to complete!
 
-+ Styled results container and components
-+ + Styled results text
-~ Fixed a bug causing reset button to not reset round result header text

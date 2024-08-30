@@ -21,13 +21,19 @@ body {
     margin: 0;
 }
 
+a {
+    /* Remove link appearance */
+    text-decoration: none;
+    color: inherit;
+}
+
 .text {
     color: #e9d8a6;
 }
 
 
 
-/* HEADER STYLES */
+/* HEADER STYLES HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH */
 .header {
     /* Display declarations */
     display: flex;
@@ -68,7 +74,7 @@ body {
 }
 
 
-/* CONTAINER STYLES cccccccccccccccccccccccccccccccccccccccccccccccccccccc*/
+/* CONTAINER STYLES CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC*/
 
 /* /* PLAYER CONTAINER  p   p   p   p   p   p   p   p   p   p   p   p   p*/
 .container.instructions-and-players {
@@ -273,7 +279,7 @@ body {
 .container.selection.card {
     /* Display declarations */
     display: flex;
-    flex: 1 0 80px;
+    flex: 0.25 0 80px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -390,6 +396,49 @@ body {
 }
 
 
+
+/* FOOTER STYLES FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF */
+.footer{
+    /* Display declarations */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /* Font and color declarations */
+    background-color: #9b2226;
+
+    /* CBPM */
+    line-height: 100%;
+    padding: 12px 100px;
+    margin: 12px 0 0 0;
+
+    /* DEBUG BORDERS */
+    /* border-style: solid;
+    border-width: 2px;
+    border-color: #FFFFFF */
+}
+
+.footer p {
+    /* Font and color declarations */
+    font-size: 14px;
+    font-weight: 600;
+    color: #001219;
+    /* CBPM */
+    line-height: 110%;
+    padding: 0;
+    margin: 0;
+
+    /* DEBUG BORDERS */
+    /* border-style: solid;
+    border-width: 2px;
+    border-color: #00FF00 */
+}
+
+.footer a {
+    /* Font and color declarations */
+    color: #ee9b00;
+}
 
 /* DEBUG BORDERS */
 /* border-style: solid;
