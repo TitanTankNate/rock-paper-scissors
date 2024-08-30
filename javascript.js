@@ -1,12 +1,16 @@
 // ASSIGN GLOBAL VARIABLES (I'm gonna puke)
 let scoreArray = [0,0,0];
 
-// EVENT HANDLING eheheheheheheheheheheheheheheheheheheheh
 
+
+// EVENT HANDLING eheheheheheheheheheheheheheheheheheheheh
 // On page load, initialize game
 document.addEventListener('DOMContentLoaded', () => {
+    // Set starting score and round count
     updateScore(scoreArray,"reset");
     console.log("Resetting score: scoreArray now: " + scoreArray);
+    
+    // Set starting opponent name
     getCPUname();
     console.log("Selecting random CPU opponent.");
 })
@@ -29,10 +33,23 @@ randomButton.addEventListener("click",() => {
     opponentNameText.textContent = "Opponent name: " + chosenCPUname;
 });
 
+// Set up "Reset" button listener
+const resetButton=document.querySelector(".button.reset");
+resetButton.addEventListener("click", () => {
+    // Reset score
+    scoreArray = updateScore(scoreArray,"reset");
+
+    // Reset opponent
+    getCPUname();
+
+    // Reset player name
+    const playerName = document.querySelector("#playerName");
+    playerName.value = "";
+});
 
 
 
-
+// FUNCTION DEFINITIONS ffffffffffffffffffffffffffffffffff
 // Choose random CPU name from list
 // -- This function creates a customizable array of names, 
 // and randomly selects one from the list.
@@ -129,64 +146,39 @@ function updateScore(inputScoreArray, functionToExecute) {
 
 
 
+
+
 // CORE GAMEPLAY LOOP
 function playRound(buttonID) {
 
-        // Obtain CPU and player choices
-        const cpuChoice = getCPUchoice();
-        const playerChoice = getPLYchoice(buttonID);    //input derived from clickhandler "choiceButtons"
+    // Obtain CPU and player choices
+    const cpuChoice = getCPUchoice();
+    const playerChoice = getPLYchoice(buttonID);    //input derived from clickhandler "choiceButtons"
 
-        // Make mathematical comparison to determine winner
-        // Logic: winning choices are always 1 or -2 when
-        // subtracting the CPU's choice from the human's.
-        // This elegantly handles all possible permutations.
-        switch (playerChoice - cpuChoice) {
-            case 2:
-            case -1:
-                scoreArray = updateScore(scoreArray,"cpuWins");
-                break;
-            case 1:
-            case -2:
-                scoreArray = updateScore(scoreArray,"playerWins");
-                break;
-            case 0:
-                scoreArray = updateScore(scoreArray,"draw");
-                break;
-        }
+    // Make mathematical comparison to determine winner
+    // Logic: winning choices are always 1 or -2 when
+    // subtracting the CPU's choice from the human's.
+    // This elegantly handles all possible permutations.
+    switch (playerChoice - cpuChoice) {
+        case 2:
+        case -1:
+            scoreArray = updateScore(scoreArray,"cpuWins");
+            break;
+        case 1:
+        case -2:
+            scoreArray = updateScore(scoreArray,"playerWins");
+            break;
+        case 0:
+            scoreArray = updateScore(scoreArray,"draw");
+            break;
+    }
 
-        // Update round results and display results to user
-        console.log(`ROUND RESULTS:
-        CPU chose ${choiceToStr(cpuChoice)}
-        You chose ${choiceToStr(playerChoice)}
-        
-        Player\t${scoreArray[1]}     CPU\t${scoreArray[0]}`);
-
-    // }
-
+    // Update round results and display results to user
+    console.log(`ROUND RESULTS:
+    CPU chose ${choiceToStr(cpuChoice)}
+    You chose ${choiceToStr(playerChoice)}
     
-    
-
-    // // Ask if player wants to continue the game
-    // let continueChoice = prompt("Continue playing? Enter y - Yes, n - No");
-    // switch (continueChoice.toLowerCase()) { // Handle uppercase inputs here
-    //     case "y":
-    //         break;
-    //     case "n":
-    //         console.log("Quitting.");
-    //         continuePlayingBool = false;
-    //         alert(`GAME OVER:
-    //         Player\t${plyScore}     CPU\t${cpuScore}
-            
-    //         ${plyScore>cpuScore ? 'Victory!' : (plyScore==cpuScore ? 'Draw.' : 'Defeat!')}`)
-    //         break;
-    //     default:
-    //         console.log("Other key pressed.  Continuing.");
-    //         break;
-    // }
-
-
-
-    
+    Player\t${scoreArray[1]}     CPU\t${scoreArray[0]}`); 
 }
 
 
