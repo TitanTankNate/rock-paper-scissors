@@ -12,6 +12,7 @@ body {
     font-family: "Titillium Web","Zen Kurenaido",sans-serif;
 
     /* CBPM */
+    min-width: 500px;
     border-left-style: solid;
     border-left-width: 4px;
     border-color: #9b2226;
@@ -78,9 +79,9 @@ body {
     padding: 6px 0px;
 
     /* DEBUG BORDERS */
-    border-style: solid;
+    /* border-style: solid;
     border-width: 2px;
-    border-color: #FFFFFF
+    border-color: #FFFFFF */
 }
 
 .container.players {
@@ -244,8 +245,17 @@ body {
 .container.selection {
     /* Display declaration */
     display: flex;
+    flex: 1 0 500px;
     justify-content: center;
-    gap: 48px;
+    gap: 24px;
+
+    /* Font and color declarations */
+    background-color: #0a9396;
+
+    /* CBPM */
+    min-width: 500px;
+    padding: 0;
+    margin: 0px 100px;
 
     /* DEBUG BORDERS */
     border-style: solid;
@@ -254,10 +264,59 @@ body {
 }
 
 .container.selection.card {
+    /* Display declarations */
+    display: flex;
+    flex: 1 0 80px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /* CBPM */
+    min-width: 140px;
+    padding: 0;
+    margin: 0;
+
     /* DEBUG BORDERS */
     border-style: solid;
     border-width: 2px;
     border-color: #FF0000
+}
+
+.button.choice {
+    /* Display declarations */
+    display: flex;
+
+    /* Image formatting */
+    height: 100px;
+    width: 100px;
+    object-fit: none;
+
+    /* CBPM */
+    border-radius: 20px;
+    box-shadow: 4px 4px 8px #000000;
+    padding: 0;
+    margin: 0;
+
+    /* DEBUG BORDERS */
+    border-style: solid;
+    border-width: 4px;
+    border-color: #005f73
+}
+
+.text.choice {
+    /* Display declarations */
+    display: flex;
+
+    /* Font and color declarations */
+    font-size: 36px;
+    font-weight: 600;
+    text-align: center;
+    text-shadow: 2px 2px 4px #9b2226;
+
+    /* CBPM */
+    line-height: 100%;
+    padding: 0;
+    margin: 0;
 }
 
 
