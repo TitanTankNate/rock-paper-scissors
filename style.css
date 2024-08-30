@@ -78,9 +78,9 @@ body {
     padding: 6px 0px;
 
     /* DEBUG BORDERS */
-    /* border-style: solid;
+    border-style: solid;
     border-width: 2px;
-    border-color: #FFFFFF */
+    border-color: #FFFFFF
 }
 
 .container.players {
@@ -153,6 +153,7 @@ body {
 #playerName {
     /* Font and color declarations */
     font-size: 16px;
+    box-shadow: 2px 2px 2px #000000;
 }
 
 .container.empty {
@@ -162,13 +163,101 @@ body {
 }
 
 
-/* SCORECARD CONTAINER */
+/* SCORECARD CONTAINER  s   s   s   s   s   s   s   s   s   s   s   s   s */
+.container.scorecard {
+    /* Display declarations */
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    gap: 48px;
+
+    /* CBPM */
+    padding: 0px 0px 24px 0px;
+    margin: 0;
+
+    /* DEBUG BORDERS */
+    /* border-style: solid;
+    border-width: 2px;
+    border-color: #FFFFFF */
+}
+
+.card.scorecard {
+    /* Display declarations */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    /* CBPM */
+    padding: 0;
+    margin: 0;
+    
+    /* DEBUG BORDERS */
+    /* border-style: solid;
+    border-width: 2px;
+    border-color: #FF0000 */
+}
+
 .scorecard.number {
-    font-size: 48px;
+    /* Display declarations */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    /* Font and color declarations */
+    font-size: 144px;
+    font-weight: 700;
+    color: #94d2bd;
+    text-shadow: 4px 4px 4px #005f73;
+
+    /* CBPM */
+    line-height: 100%;
+    min-width: 120px;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+
+    /* DEBUG BORDERS */
+    /* border-style: solid;
+    border-width: 2px;
+    border-color: #00FF00 */
+}
+
+.text.score {
+    /* Font and color declarations */
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+
+    /* CBPM */
+    line-height: 100%;
+    padding: 4px 0px;
+    margin: 0;
+
+    /* DEBUG BORDERS */
+    /* border-style: solid;
+    border-width: 2px;
+    border-color: #0000FF */
+}
+
+
+
+/* SELECTION CONTAINER se   se  se  se  se  se  se  se  se  se  se  */
+.container.selection {
+    /* Display declaration */
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+
     /* DEBUG BORDERS */
     border-style: solid;
     border-width: 2px;
     border-color: #FFFFFF
+}
+
+.container.selection.card {
+    /* DEBUG BORDERS */
+    border-style: solid;
+    border-width: 2px;
+    border-color: #FF0000
 }
 
 

@@ -16,7 +16,3 @@ https://www.theodinproject.com
 # Workload
 Curious how long it took to make this project?
 This project took 22 pomodoros to complete!
-
-+ Added and declared the following styles:
-+ + Header and header text
-~ Tweaked classes for page text
